@@ -1,0 +1,26 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'AZ-RmPipelineSasa-conn'
+    subscriptionId: 'e2599d8b-a119-4de3-8cf6-6f1039472555'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'AzureRmPipeline-rgSasa'
+    location: 'Canada Central'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'https://raw.githubusercontent.com/MaisamRazai/AZ-RmPipeline-sasa222/main/CreateWebApp/azuredeploy.json?token=ADH2IZE6URQR6T4GYM2S6DLBBPKJ6'
+    overrideParameters: '-projectName myarmpipelinesasa'
+    deploymentMode: 'Incremental'
+    deploymentName: 'DeployPipelineTemplate'
