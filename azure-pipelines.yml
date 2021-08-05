@@ -20,7 +20,7 @@ steps:
     resourceGroupName: 'AzureRmPipeline-rgSasa'
     location: 'Canada Central'
     templateLocation: 'URL of the file'
-    csmFileLink: 'https://raw.githubusercontent.com/MaisamRazai/AZ-RmPipeline-sasa222/main/CreateWebApp/azuredeploy.json?token=ADH2IZG73LQRRVJGBPXJ4G3BBPNMW'
+    csmFileLink: 'https://raw.githubusercontent.com/MaisamRazai/AZ-RmPipeline-sasa222/main/CreateWebApp/azuredeploy.json'
     overrideParameters: '-projectName myarmpipelinesasa'
     deploymentMode: 'Incremental'
     deploymentName: 'DeployPipelineTemplate'
